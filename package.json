@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "timeflyapp",
   "version": "1.0.0",
   "description": "A time management app",
@@ -67,4 +68,27 @@
     "last 2 versions",
     "not ie <= 8"
   ]
+=======
+  "name": "timefly",
+  "version": "0.0.1",
+  "description": "A time and goal managment system built by members of Exeter University.\r Creation was prompted by the Computer Science Society's February Hackathon.",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HatlessStudios/TimeFly.git"
+  },
+  "author": "Hatless Studios",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HatlessStudios/TimeFly/issues"
+  },
+  "homepage": "https://github.com/HatlessStudios/TimeFly#readme"
+>>>>>>> 4c034ec23c37429bd2621890d27c39c9c2864d68
 }
