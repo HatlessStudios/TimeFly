@@ -1,5 +1,21 @@
-# TimeFly
-A time and goal managment system built by members of Exeter University.
-Creation was prompted by the Computer Science Society's February Hackathon.
+# timeflyapp
 
-This is software may be used under Creative Commons (CC) licence.
+> a management system
+
+## Build Setup
+
+``` bash
+# install dependencies
+npm install
+
+# serve with hot reload at localhost:8080
+npm run dev
+
+# build for production with minification
+npm run build
+
+# build for production and view the bundle analyzer report
+npm run build --report
+```
+
+For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
