@@ -1,22 +1,18 @@
 package calendar;
 
-public class Calendar implements CalendarView {
+import java.util.ArrayList;
+import java.util.Collections;
 
-    private Timeslot[] data;
+public class Calendar {
 
-    @Override
-    public void showTimePeriod(boolean showDetail, Timeslot[] data) {
+    private ArrayList<Timeslot> data;
 
+    public ArrayList<Timeslot> getData(){
+        return data;
     }
 
-    @Override
-    public void moveActivity() {
-
-    }
-
-    @Override
-    public Timeslot[] getCalendar(long unixStart, long unixFinish) {
-        return new Timeslot[0];
+    private void sortTime(){
+        Collections.sort(data);
     }
     //TODO Implement RLE to cut out blank time slots. Dictionary encoding may also be a good idea.
 }

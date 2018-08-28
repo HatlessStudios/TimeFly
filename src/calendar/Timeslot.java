@@ -1,10 +1,12 @@
 package calendar;
 
 import activity.Activity;
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Timeslot {
+public class Timeslot implements Comparable<Timeslot>{
 
     private ArrayList<Activity> activities = new ArrayList<>();
     private long ID;
@@ -47,5 +49,10 @@ public class Timeslot {
 
     private static long convertDateToID(Date timeStart){
         return timeStart.getTime()/5;
+    }
+
+    @Override
+    public int compareTo(@NotNull Timeslot compareSlot) {
+        return (int)(this.ID - compareSlot.ID);
     }
 }
