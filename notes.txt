@@ -1,0 +1,7 @@
+# Time Slots
+- Can contain multiple concurrent activities.
+- Requires a linearly identifiable ID e.g. UnixTime mod 5
+
+# Activities
+- Contain a variable pointing to its starting Time Slot.
+- ID is a compound hash of its name and Timeslot ID

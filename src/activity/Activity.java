@@ -1,22 +1,31 @@
 package activity;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class Activity {
 
-    private final int ID;
+    private UUID ID;
     private String name;
+    private int timeID;
+    // Duration of 1 = 5 minutes.
+    private int duration;
     private ArrayList<String> notes;
 
-    public Activity(int id, String name, ArrayList<String> notes) {
+    public Activity(String name, ArrayList<String> notes, int timeID) {
 
-        ID = id;
         this.name = name;
         this.notes = new ArrayList<>(notes);
+        this.timeID = timeID;
+        ID = UUID.fromString(name + timeID);
     }
 
-    public int getID() {
+    public UUID getID() {
         return ID;
+    }
+
+    public int getTimeID(){
+        return timeID;
     }
 
     public String getName() {
@@ -31,8 +40,12 @@ public class Activity {
         notes.add(toAdd);
         }
 
-    public void removeNote(String toRemove){
-        notes.remove(toRemove);
+    /**
+     * Removes the note at the given index.
+     * @param index the index to be deleted.
+     */
+    public void removeNote(int index){
+        notes.remove(index);
     }
 
     public void renameActivity(String newName){
