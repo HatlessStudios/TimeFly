@@ -1,12 +1,12 @@
 package calendar;
 
+import activity.Activity;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.UUID;
 
 public class Timeslot {
 
-    private ArrayList<UUID> activIDs;
+    private ArrayList<Activity> activities = new ArrayList<>();
     private long ID;
 
     public Timeslot(int startTime){
@@ -17,24 +17,24 @@ public class Timeslot {
         ID = Timeslot.convertDateToID(startTime);
     }
 
-    public ArrayList<UUID> getActivIDs(){
-        return activIDs;
+    public ArrayList<Activity> getActivities(){
+        return activities;
     }
 
     public boolean isEmpty(){
-        return (activIDs == null);
+        return (activities == null);
     }
 
     public long getID() {
         return ID;
     }
 
-    public void addActivity(UUID activityID){
-        activIDs.add(activityID);
+    public void addActivity(Activity activity){
+        activities.add(activity);
     }
 
-    public void remActivity(UUID activityID){
-        activIDs.remove(activityID);
+    public void remActivity(Activity activity){
+        activities.remove(activity);
     }
 
     public Date getDate(){
