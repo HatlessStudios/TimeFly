@@ -11,12 +11,8 @@ public class Timeslot implements Comparable<Timeslot>{
     private ArrayList<Activity> activities = new ArrayList<>();
     private long ID;
 
-    public Timeslot(int startTime){
+    public Timeslot(long startTime){
         ID = startTime / 5;
-    }
-
-    public Timeslot(Date startTime){
-        ID = Timeslot.convertDateToID(startTime);
     }
 
     public ArrayList<Activity> getActivities(){
@@ -39,16 +35,12 @@ public class Timeslot implements Comparable<Timeslot>{
         activities.remove(activity);
     }
 
-    public Date getDate(){
-        return Timeslot.convertIDToDate(ID);
+    public long getTime(){
+        return ID;
     }
 
-    private static Date convertIDToDate(long timeStart){
-        return new Date(timeStart*5);
-    }
-
-    public static long convertDateToID(Date timeStart){
-        return timeStart.getTime()/5;
+    private static long convertIDToTime(long timeStart){
+        return timeStart*5;
     }
 
     @Override

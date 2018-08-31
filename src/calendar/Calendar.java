@@ -14,8 +14,8 @@ public class Calendar {
         return data;
     }
 
-    public void createEvent(Date startTime, Activity activity){
-        long timeslotID = Timeslot.convertDateToID(startTime);
+    public void createEvent(Activity activity){
+        long timeslotID = activity.getTimeID();
         for (Timeslot datum : data) {
             if (datum.getID() == timeslotID){
                 //TODO Add activities spanning longer than 1 timeslot
@@ -24,7 +24,7 @@ public class Calendar {
             }
         }
         //TODO This involves calculating the ID twice
-        Timeslot newSlot = new Timeslot(startTime);
+        Timeslot newSlot = new Timeslot(timeslotID);
         data.add(newSlot);
         newSlot.addActivity(activity);
         Collections.sort(data);
@@ -38,6 +38,19 @@ public class Calendar {
                 }
             }
         }
+    }
+
+    public void displayCalendar(boolean showDetail){
+        for (Timeslot datum : data) {
+            for (Activity activity : datum.getActivities()) {
+                System.out.println("ID: " + activity.getID() + "   Name: " + activity.getName() +
+                        "   TimeID: "+ activity.getTimeID() + "   Notes: " + activity.getNotes());
+            }
+        }
+    }
+
+    public void displayCalendar(){
+        displayCalendar(false);
     }
     //TODO Implement RLE to cut out blank time slots. Dictionary encoding may also be a good idea.
 }

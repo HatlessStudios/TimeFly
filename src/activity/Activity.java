@@ -7,16 +7,21 @@ public class Activity {
 
     private UUID ID;
     private String name;
-    private int timeID;
+    private long timeID;
     // Duration of 1 = 5 minutes.
     private int duration;
     private ArrayList<String> notes;
 
-    public Activity(String name, ArrayList<String> notes, int timeID) {
+    public Activity(String name, long timeID, int duration) {
+        this(name, timeID, duration, new ArrayList<>());
+    }
+
+    public Activity(String name, long timeID, int duration, ArrayList<String> notes) {
 
         this.name = name;
         this.notes = new ArrayList<>(notes);
         this.timeID = timeID;
+        this.duration = duration;
         ID = UUID.fromString(name + timeID);
     }
 
@@ -24,7 +29,7 @@ public class Activity {
         return ID;
     }
 
-    public int getTimeID(){
+    public long getTimeID(){
         return timeID;
     }
 
