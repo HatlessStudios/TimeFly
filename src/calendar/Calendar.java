@@ -4,11 +4,10 @@ import activity.Activity;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Date;
 
 public class Calendar {
 
-    private ArrayList<Timeslot> data;
+    private ArrayList<Timeslot> data = new ArrayList<>();
 
     public ArrayList<Timeslot> getData(){
         return data;
@@ -16,11 +15,13 @@ public class Calendar {
 
     public void createEvent(Activity activity){
         long timeslotID = activity.getTimeID();
-        for (Timeslot datum : data) {
-            if (datum.getID() == timeslotID){
-                //TODO Add activities spanning longer than 1 timeslot
-                datum.addActivity(activity);
-                return;
+        if (!data.isEmpty()){
+            for (Timeslot datum : data) {
+                if (datum.getID() == timeslotID) {
+                    //TODO Add activities spanning longer than 1 timeslot
+                    datum.addActivity(activity);
+                    return;
+                }
             }
         }
         //TODO This involves calculating the ID twice

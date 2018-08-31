@@ -5,7 +5,7 @@ import java.util.UUID;
 
 public class Activity {
 
-    private UUID ID;
+    private int ID;
     private String name;
     private long timeID;
     // Duration of 1 = 5 minutes.
@@ -22,10 +22,10 @@ public class Activity {
         this.notes = new ArrayList<>(notes);
         this.timeID = timeID;
         this.duration = duration;
-        ID = UUID.fromString(name + timeID);
+        ID = (timeID+name).hashCode();
     }
 
-    public UUID getID() {
+    public int getID() {
         return ID;
     }
 
