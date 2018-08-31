@@ -47,7 +47,7 @@ public class Timeslot implements Comparable<Timeslot>{
         return new Date(timeStart*5);
     }
 
-    private static long convertDateToID(Date timeStart){
+    public static long convertDateToID(Date timeStart){
         return timeStart.getTime()/5;
     }
 
